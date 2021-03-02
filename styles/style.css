@@ -1,17 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
-    text-align: center;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-.navBar {
+body {
+    min-height: 100vh;
+    width: 100%;
+    background: rgb(98, 101, 107);
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+.header{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 15px;
+}
+.header-main{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+.header .logo{ /*logo container*/
+    padding: 0 15px;
+}
+.header .logo a{ /*logo link/text*/
+    font-size: 30px;
+    color: rgb(226, 80, 105);
+    font-weight: 800;
+}
+.header .nav-menu{ /*nav container */
+    padding: 0 15px;
+}
+.header .menu > .menu-item{  /*menu items of class menu in class header*/
     display: inline-block;
+    margin-left: 30px;
     position: relative;
 }
-a {
-    text-decoration: none;
-    background-color: black;
-    color: white;
-}
-.content a {
+.header .menu > .menu-item > a{ /*text links from header*/
     display: block;
+    padding: 15px 0;
+    color: #424242;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.header .menu > .menu-item > a:hover,
+.header .menu > .menu-item > .sub-menu > .menu-item > a:hover{
+    color: rgb(226, 80, 105);
+}
+/* .header .menu > .menu-item > .sub-menu{ 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 2);
+    width: 200px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #ffffff;
+    border-top: solid 5px rgb(226, 80, 105);
+    transform: translate(20px);
+    transition: all 0.3s ease;
+} */
+.header .menu > .menu-item:hover > .sub-menu{ /*hover effect for ul to li container */
+    transform: translateY(0);
+}
+.header .menu > .menu-item > .sub-menu > .menu-item{ /*drop li cont*/
+    display: block;
+}
+.header .menu > .menu-item > .sub-menu > .menu-item > a{ /*dropdown li*/
+    display: block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    transition: all 0.3s ease;
+}
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+ul {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.active{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 2);
+    width: 200px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #ffffff;
+    border-top: solid 5px rgb(226, 80, 105);
+    transform: translate(10px);
+    transition: all 0.3s ease;
 }
