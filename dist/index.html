@@ -8,19 +8,44 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="navbar">
-        <a href="#">Home</a>
-        <a href="#">News</a>
-        <a href="#">About</a>
-        <a href="#" id ="dropdown">Dropdownᐯ</a>
-        <!-- ᐱ -->
-        <div class="content">
-            <a href="#">This</a>
-            <a href="#">Is A</a>
-            <a href="#">Dropdown</a>
-            <a href="#">Menu</a>
-        </div>  
-    </div>
+    <header class="header">
+        <div class="container">
+            
+            <div class="header-main">
+                <div class="logo"><a href="#">Dynamic UI</a></div>
+                <nav class="nav-menu">
+                    <ul class="menu">
+                        <li class="menu-item">
+                            <a href="#" id="home">Home v</a>
+                            <ul class="sub-menu" id="home-content">
+                                <li class="menu-item"><a href="#">This</a></li>
+                                <li class="menu-item"><a href="#">Is A</a></li>
+                                <li class="menu-item"><a href="#">Dropdown</a></li>
+                                <li class="menu-item"><a href="#">Menu</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#" id="about">About v</a>
+                            <ul class="sub-menu" id="about-content">
+                                <li class="menu-item"><a href="#">This</a></li>
+                                <li class="menu-item"><a href="#">Is Another</a></li>
+                                <li class="menu-item"><a href="#">Dropdown</a></li>
+                                <li class="menu-item"><a href="#">Menu</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">News</a>
+                        </li>
+                        <li class="menu-item">
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+    
     <script src="main.js"></script>
 </body>
 </html>
