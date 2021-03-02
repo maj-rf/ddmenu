@@ -5,47 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/style.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Dynamic UI</title>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            
-            <div class="header-main">
-                <div class="logo"><a href="#">Dynamic UI</a></div>
-                <nav class="nav-menu">
-                    <ul class="menu">
-                        <li class="menu-item">
-                            <a href="#" id="home">Home v</a>
-                            <ul class="sub-menu" id="home-content">
-                                <li class="menu-item"><a href="#">This</a></li>
-                                <li class="menu-item"><a href="#">Is A</a></li>
-                                <li class="menu-item"><a href="#">Dropdown</a></li>
-                                <li class="menu-item"><a href="#">Menu</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#" id="about">About v</a>
-                            <ul class="sub-menu" id="about-content">
-                                <li class="menu-item"><a href="#">This</a></li>
-                                <li class="menu-item"><a href="#">Is Another</a></li>
-                                <li class="menu-item"><a href="#">Dropdown</a></li>
-                                <li class="menu-item"><a href="#">Menu</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#">News</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="#">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-
+    <header>
+        <div class="logo"> LOGO </div>
+        <nav id="navi">
+            <ul class="nav-container">
+                <li class="default"><a href="#">Home</a></li>
+                <li>
+                    <a href="#">About</a>
+                    <!-- <ul class="sub-menu" id="about-content">
+                        <li class="menu-item"><a href="#">This</a></li>
+                        <li class="menu-item"><a href="#">Is A</a></li>
+                        <li class="menu-item"><a href="#">Dropdown</a></li>
+                        <li class="menu-item"><a href="#">Menu</a></li>
+                    </ul> -->
+                </li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle">
+            <div class="menu-icon"></div>
+            <div class="menu-icon"></div>
+            <div class="menu-icon"></div>
         </div>
     </header>
-    
     <script src="main.js"></script>
 </body>
 </html>
