@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("const aElements = document.querySelectorAll('a');\nconst homeContent = document.querySelector('#home-content');\nconst aboutContent = document.querySelector('#about-content');\nconst clearActive = () => {\n  homeContent.style.display = 'none';\n  aboutContent.style.display = 'none';\n  aboutContent.classList.remove('active');\n  homeContent.classList.remove('active');\n  homeContent.parentElement.childNodes[1].innerText = 'Home v';\n  aboutContent.parentElement.childNodes[1].innerText = 'About v';\n};\nclearActive();\naElements.forEach((a) => {\n  a.addEventListener('click', (e) => {\n    if (e.target.id === 'home') {\n      if (homeContent.style.display === 'none') {\n        clearActive();\n        e.target.innerText = 'Home ^';\n        homeContent.style.display = 'block';\n        homeContent.classList.toggle('active');\n      } else {\n        clearActive();\n      }\n    } else if (e.target.id === 'about') {\n      if (aboutContent.style.display === 'none') {\n        clearActive();\n        e.target.innerText = 'About ^';\n        aboutContent.style.display = 'block';\n        aboutContent.classList.toggle('active');\n      } else {\n        clearActive();\n      }\n    }\n  });\n});\n\n\n//# sourceURL=webpack://ddmenu/./src/index.js?");
+eval("const menuIcon = document.querySelector('.menu-toggle');\nconst navi = document.querySelector('#navi');\nmenuIcon.addEventListener('click', () => {\n  navi.classList.add('nav-active');\n});\n\n\n//# sourceURL=webpack://ddmenu/./src/index.js?");
 
 /***/ })
 
