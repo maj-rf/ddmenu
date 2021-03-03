@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 html, body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Lato', sans-serif;
+    background-color: #bababa;
 }
 * {
     box-sizing: border-box;
@@ -34,9 +36,27 @@ header .logo{
 .nav-container li{ /* li */
     list-style: none;
     border-radius: 2px;
+    position: relative;
+    transition: all 0.3s ease;
 }
-.nav-container li:hover,
-.nav-container .default{
+.nav-container > li > a{
+    font-size: 18px;
+    font-weight: 600;
+}
+.nav-container > li > ul{
+    border-top: 3px solid #fff;
+    box-shadow: 3px 3px rgba(3, 3, 3, 0.253);
+}
+/* .dropdown{ .nav-container li ul
+    position: absolute;
+    background: #333;
+    padding: 0;
+} */
+.dropdown li a:hover{
+    background-color: rgb(83, 109, 255);
+}
+.nav-container > li:hover,
+.nav-container .default-li{
     background: rgb(62, 89, 240);
 }
 .nav-container li a{ /* links */
@@ -45,6 +65,7 @@ header .logo{
     line-height: 50px;
     padding: 0 20px;
     color: #fff;
+    transition: all 0.3s ease;
 }
 .menu-icon{
     width: 35px;
@@ -58,13 +79,29 @@ header .logo{
     font-size: 30px;
     display: none;
 }
+.menu-toggle:hover > .menu-icon{
+    background-color: rgb(62, 89, 240);
+}
+.icon-active{
+    background-color: rgb(62, 89, 240);
+}
+.active{
+    position: absolute;
+    background: #333;
+    padding: 0;
+    transition: all 0.3s ease;
+}
 
-@media (max-width: 700px){
+@media (max-width: 800px){
     header
     {
-        padding: 0 20px
+        padding: 0 20px;
     }
-    .menu-toggle{ /* hamburger icon*/
+    body{
+        background-color: #333;
+        box-sizing: border-box;
+    }
+    .menu-toggle{ /* container for hamburger icon*/
         display: block;
     }
     header nav{ /* nav parent */
@@ -82,6 +119,13 @@ header .logo{
     .nav-container{
         display: block;
         text-align: center;
+    }
+    .nav-container li{
+        position: relative;
+    }
+    .dropdown{
+        position: static;
+        z-index: 1;
     }
     .nav-container li a{
         border-bottom: 1px solid rgba(22, 22, 22, 0.226);
