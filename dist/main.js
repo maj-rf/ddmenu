@@ -20,13 +20,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/imgslider.js":
+/*!**************************!*\
+  !*** ./src/imgslider.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst imgslider = (() => {\n  const slider = document.querySelector('.slider');\n  const images = document.querySelectorAll('.slider img');\n  const prevNext = document.querySelectorAll('#previous, #next');\n  //   console.log(prevNext);\n  //   const prev = document.querySelector('#previous');\n  //   const next = document.querySelector('#next');\n  let counter = 1;\n  const size = images[0].clientWidth;\n\n  slider.style.transform = `translateX(${-size * counter}px)`;\n  prevNext.forEach((button) => {\n    button.addEventListener('click', (e) => {\n      if (e.target.id === 'next') {\n        slider.style.transition = 'transform 0.4s ease in-out';\n        counter += 1;\n        slider.style.transform = `translateX(${-size * counter}px)`;\n        if (counter === 6) counter = 1;\n      } if (e.target.id === 'previous') {\n        slider.style.transition = 'transform 0.4s ease in-out';\n        counter -= 1;\n        slider.style.transform = `translateX(${-size * counter}px)`;\n        if (counter === 1) counter = 6;\n      }\n    });\n  });\n//   next.addEventListener('click', () => {\n//     slider.style.transition = 'transform 0.4s ease in-out';\n//     counter += 1;\n//     slider.style.transform = `translateX(${-size * counter}px)`;\n//   });\n//   prev.addEventListener('click', () => {\n//     slider.style.transition = 'transform 0.4s ease in-out';\n//     counter -= 1;\n//     slider.style.transform = `translateX(${-size * counter}px)`;\n//   });\n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (imgslider);\n\n\n//# sourceURL=webpack://ddmenu/./src/imgslider.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom */ \"./src/dom.js\");\n\n\n(0,_dom__WEBPACK_IMPORTED_MODULE_0__.default)();\n\n\n//# sourceURL=webpack://ddmenu/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom */ \"./src/dom.js\");\n/* harmony import */ var _imgslider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./imgslider */ \"./src/imgslider.js\");\n\n\n\n(0,_dom__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_imgslider__WEBPACK_IMPORTED_MODULE_1__.default)();\n\n\n//# sourceURL=webpack://ddmenu/./src/index.js?");
 
 /***/ })
 
