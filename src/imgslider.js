@@ -1,10 +1,8 @@
+/* eslint-disable no-plusplus */
 const imgslider = (() => {
   const slider = document.querySelector('.slider');
   const images = document.querySelectorAll('.slider img');
   const prevNext = document.querySelectorAll('#previous, #next');
-  //   console.log(prevNext);
-  //   const prev = document.querySelector('#previous');
-  //   const next = document.querySelector('#next');
   let counter = 1;
   const size = images[0].clientWidth;
 
@@ -12,28 +10,31 @@ const imgslider = (() => {
   prevNext.forEach((button) => {
     button.addEventListener('click', (e) => {
       if (e.target.id === 'next') {
-        slider.style.transition = 'transform 0.4s ease in-out';
-        counter += 1;
+        if (counter >= images.length - 1) return;
+        slider.style.transition = 'transform 0.5s ease-in-out';
+        counter++;
         slider.style.transform = `translateX(${-size * counter}px)`;
-        if (counter === 6) counter = 1;
       } if (e.target.id === 'previous') {
-        slider.style.transition = 'transform 0.4s ease in-out';
-        counter -= 1;
+        if (counter <= 0) return;
+        slider.style.transition = 'transform 0.5s ease-in-out';
+        counter--;
         slider.style.transform = `translateX(${-size * counter}px)`;
-        if (counter === 1) counter = 6;
       }
     });
   });
-//   next.addEventListener('click', () => {
-//     slider.style.transition = 'transform 0.4s ease in-out';
-//     counter += 1;
-//     slider.style.transform = `translateX(${-size * counter}px)`;
-//   });
-//   prev.addEventListener('click', () => {
-//     slider.style.transition = 'transform 0.4s ease in-out';
-//     counter -= 1;
-//     slider.style.transform = `translateX(${-size * counter}px)`;
-//   });
+
+  slider.addEventListener('transitionend', () => {
+    if (images[counter].id === 'lastClone') {
+      slider.style.transition = 'none';
+      counter = images.length - 2;
+      slider.style.transition = `translateX(${-size * counter}px)`;
+    }
+    if (images[counter].id === 'firstClone') {
+      slider.style.transition = 'none';
+      counter = images.length - counter;
+      slider.style.transition = `translateX(${-size * counter}px)`;
+    }
+  });
 })();
 
 export default imgslider;
