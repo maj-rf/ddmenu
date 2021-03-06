@@ -4,6 +4,7 @@ html, body {
     padding: 0;
     font-family: 'Lato', sans-serif;
     background-color: #bababa;
+    overflow: hidden;
 }
 * {
     box-sizing: border-box;
@@ -72,6 +73,7 @@ header .logo{
     height: 5px;
     background-color: #fff;
     margin: 6px 0;
+    transition: transform 700ms ease-in-out;
 }
 .menu-toggle{
     cursor: pointer;
@@ -80,9 +82,10 @@ header .logo{
     display: none;
 }
 .menu-toggle:hover > .menu-icon{
-    background-color: rgb(62, 89, 240);
+    background-color: #929292;
 }
 .icon-active{
+    transform: rotate(180deg);
     background-color: rgb(62, 89, 240);
 }
 .active{
@@ -99,11 +102,39 @@ header .logo{
     text-align: center;
     overflow: hidden;
     border: 2px solid blueviolet;
+    position: relative;
 }
 .slider{
     display: flex;
     width: 100%;
     height: 460px;
+}
+.slider-cont button{
+    background: none;
+	color: white;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    font-size: 70px;
+    opacity: 0.4;
+    margin: 0;
+}
+button#previous{
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    top: 50%;
+}
+button#next{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: 10;
+}
+.slider-cont button:hover{
+    opacity: 0.9;
 }
 
 
@@ -146,5 +177,8 @@ header .logo{
     }
     .nav-container li a{
         border-bottom: 1px solid rgba(22, 22, 22, 0.226);
+    }
+    .slider-cont{
+        width: 100%;
     }
 }
