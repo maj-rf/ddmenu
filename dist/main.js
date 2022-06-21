@@ -20,23 +20,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/imgslider.js":
-/*!**************************!*\
-  !*** ./src/imgslider.js ***!
-  \**************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* eslint-disable no-plusplus */\nconst imgslider = (() => {\n  const slider = document.querySelector('.slider');\n  const images = document.querySelectorAll('.slider img');\n  const prevNext = document.querySelectorAll('#previous, #next');\n  let counter = 1;\n  const size = images[0].clientWidth;\n\n  slider.style.transform = `translateX(${-size * counter}px)`;\n  prevNext.forEach((button) => {\n    button.addEventListener('click', (e) => {\n      if (e.target.id === 'next') {\n        if (counter >= images.length - 1) return;\n        slider.style.transition = 'transform 0.5s ease-in-out';\n        counter++;\n        slider.style.transform = `translateX(${-size * counter}px)`;\n      } if (e.target.id === 'previous') {\n        if (counter <= 0) return;\n        slider.style.transition = 'transform 0.5s ease-in-out';\n        counter--;\n        slider.style.transform = `translateX(${-size * counter}px)`;\n      }\n    });\n  });\n\n  slider.addEventListener('transitionend', () => {\n    if (images[counter].id === 'lastClone') {\n      slider.style.transition = 'none';\n      counter = images.length - 2;\n      slider.style.transition = `translateX(${-size * counter}px)`;\n    }\n    if (images[counter].id === 'firstClone') {\n      slider.style.transition = 'none';\n      counter = images.length - counter;\n      slider.style.transition = `translateX(${-size * counter}px)`;\n    }\n  });\n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (imgslider);\n\n\n//# sourceURL=webpack://ddmenu/./src/imgslider.js?");
-
-/***/ }),
-
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom */ \"./src/dom.js\");\n/* harmony import */ var _imgslider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./imgslider */ \"./src/imgslider.js\");\n\n\n\n(0,_dom__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_imgslider__WEBPACK_IMPORTED_MODULE_1__.default)();\n\n\n//# sourceURL=webpack://ddmenu/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom */ \"./src/dom.js\");\n/* harmony import */ var _slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./slider */ \"./src/slider.js\");\n\n\n\n(0,_dom__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_slider__WEBPACK_IMPORTED_MODULE_1__.default)();\n\n\n//# sourceURL=webpack://ddmenu/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/slider.js":
+/*!***********************!*\
+  !*** ./src/slider.js ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst slider = (() => {\n  const dots = document.querySelector('.dots');\n  dots.addEventListener('click', (e) => {\n    const target = e.target;\n    if (!target.matches('.dot')) {\n      return;\n    }\n\n    const index = Array.from(dots.children).indexOf(target);\n    const selector = `.box:nth-child(${index + 1})`;\n    const box = document.querySelector(selector);\n    box.scrollIntoView({\n      behavior: 'smooth',\n      inline: 'start',\n    });\n  });\n})();\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (slider);\n\n\n//# sourceURL=webpack://ddmenu/./src/slider.js?");
 
 /***/ })
 

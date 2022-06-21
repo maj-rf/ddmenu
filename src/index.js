@@ -1,5 +1,5 @@
 import dom from './dom';
-import imgslider from './imgslider';
+import slider from './slider';
 
 dom();
-imgslider();
+slider();
