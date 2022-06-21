@@ -1,60 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="styles/style.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles/style.css" rel="stylesheet" />
     <title>Dynamic UI</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="logo"> DYNAMIC UI </div>
-        <nav id="navi">
-            <ul class="nav-container">
-                <li class="default-li"><a href="#">Home</a></li>
-                <li class="sub-menu"><a href="#" id="about">About ᐁ</a> 
-                    <!-- ᐃ -->
-                    <ul class="dropdown" id="about-content">
-                        <li class="menu-item"><a href="#">This</a></li>
-                        <li class="menu-item"><a href="#">Is A</a></li>
-                        <li class="menu-item"><a href="#">Dropdown</a></li>
-                        <li class="menu-item"><a href="#">Menu</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Services</a></li>
-                <li class="sub-menu"><a href="#" id="contact">Contact ᐁ</a>
-                    <ul class="dropdown" id="contact-content">
-                        <li class="menu-item"><a href="#">This Is</a></li>
-                        <li class="menu-item"><a href="#">Another</a></li>
-                        <li class="menu-item"><a href="#">Dropdown</a></li>
-                        <li class="menu-item"><a href="#">Menu</a></li>
-                    </ul>
-                </li>
-                    
+      <div class="logo">DYNAMIC UI</div>
+      <nav id="navi">
+        <ul class="nav-container">
+          <li class="default-li"><a href="#">Home</a></li>
+          <li class="sub-menu">
+            <a href="#" id="about">About ᐁ</a>
+            <!-- ᐃ -->
+            <ul class="dropdown" id="about-content">
+              <li class="menu-item"><a href="#">This</a></li>
+              <li class="menu-item"><a href="#">Is A</a></li>
+              <li class="menu-item"><a href="#">Dropdown</a></li>
+              <li class="menu-item"><a href="#">Menu</a></li>
             </ul>
-        </nav>
-        <div class="menu-toggle">
-            <div class="menu-icon"></div>
-            <div class="menu-icon"></div>
-            <div class="menu-icon"></div>
-        </div>
+          </li>
+          <li><a href="#">Services</a></li>
+          <li class="sub-menu">
+            <a href="#" id="contact">Contact ᐁ</a>
+            <ul class="dropdown" id="contact-content">
+              <li class="menu-item"><a href="#">This Is</a></li>
+              <li class="menu-item"><a href="#">Another</a></li>
+              <li class="menu-item"><a href="#">Dropdown</a></li>
+              <li class="menu-item"><a href="#">Menu</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="menu-toggle">
+        <div class="menu-icon"></div>
+        <div class="menu-icon"></div>
+        <div class="menu-icon"></div>
+      </div>
     </header>
 
-    <div class="slider-cont">
-        <button id="previous"> ⬅ </button>
-        <button id="next"> ➡ </button>
-        <div class="slider">
-            <img src="assets/img6.jpg" id="lastClone">
-            <img src="assets/img1.jpg">
-            <img src="assets/img2.jpg">
-            <img src="assets/img3.jpg">
-            <img src="assets/img4.jpg">
-            <img src="assets/img5.jpg">
-            <img src="assets/img6.jpg">
-            <img src="assets/img1.jpg" id="firstClone">
-        </div>
+    <div class="carousel">
+      <div class="flex-carousel">
+        <img src="./assets/img1.jpg" alt="img1" />
+        <img src="./assets/img2.jpg" alt="img2" />
+        <img src="./assets/img3.jpg" alt="img3" />
+        <img src="./assets/img4.jpg" alt="img4" />
+        <img src="./assets/img5.jpg" alt="img5" />
+        <img src="./assets/img6.jpg" alt="img6" />
+      </div>
     </div>
+
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
